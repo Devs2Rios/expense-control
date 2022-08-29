@@ -11,11 +11,11 @@ export default function ChartBar(props) {
       <div className='bar' />
       <span
         style={{
-          content: '',
           width: '1rem',
-          position: 'absolute',
-          bottom: '-3rem',
+          borderRadius: '2px',
           backgroundColor: '#5f2fff',
+          position: 'absolute',
+          transform: `translate(0, ${6 * (1 - props.percent)}rem)`,
           height: `${6 * props.percent}rem`,
         }}
       />
