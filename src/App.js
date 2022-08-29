@@ -57,6 +57,9 @@ export default function App() {
       expense.id = `e${expenses.length + 1}`;
       expense.amount = Number(expense.amount);
       expenses.push(expense);
+      // Updated outside because other states depending on it are updated here as well
+      // If it would be alone it might use:
+      // setExpenses(prevExpenses => [expense, ...prevExpenses]);
       setExpenses(expenses);
       setItems(itemsByYear([...expenses], yearFilter));
       setYears(getYears(expenses));
