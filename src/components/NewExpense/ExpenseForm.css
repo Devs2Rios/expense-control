@@ -21,6 +21,29 @@
   max-width: 100%;
 }
 
+.new-expense__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
 .new-expense__actions {
-  text-align: right;
+  text-align: center;
+  flex-basis: 30%;
+}
+
+.new-expense__actions button {
+  width: 100%;
+}
+
+.new-expense__open-ui {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-ui-btn {
+  flex-basis: 100%;
+  max-width: 20rem;
+  align-self: center;
 }

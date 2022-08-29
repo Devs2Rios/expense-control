@@ -67,7 +67,7 @@ export default function App() {
     };
   // Component
   return (
-    <div>
+    <div className='App'>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses
         items={items}

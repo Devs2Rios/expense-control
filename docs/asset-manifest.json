@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/expense-control/static/css/main.d4dc5a52.chunk.css",
-    "main.js": "/expense-control/static/js/main.1086a1fe.chunk.js",
-    "main.js.map": "/expense-control/static/js/main.1086a1fe.chunk.js.map",
+    "main.css": "/expense-control/static/css/main.2d05f54c.chunk.css",
+    "main.js": "/expense-control/static/js/main.17c04a59.chunk.js",
+    "main.js.map": "/expense-control/static/js/main.17c04a59.chunk.js.map",
     "runtime-main.js": "/expense-control/static/js/runtime-main.f06070ef.js",
     "runtime-main.js.map": "/expense-control/static/js/runtime-main.f06070ef.js.map",
     "static/js/2.6104cb88.chunk.js": "/expense-control/static/js/2.6104cb88.chunk.js",
     "static/js/2.6104cb88.chunk.js.map": "/expense-control/static/js/2.6104cb88.chunk.js.map",
     "index.html": "/expense-control/index.html",
-    "static/css/main.d4dc5a52.chunk.css.map": "/expense-control/static/css/main.d4dc5a52.chunk.css.map",
+    "static/css/main.2d05f54c.chunk.css.map": "/expense-control/static/css/main.2d05f54c.chunk.css.map",
     "static/js/2.6104cb88.chunk.js.LICENSE.txt": "/expense-control/static/js/2.6104cb88.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f06070ef.js",
     "static/js/2.6104cb88.chunk.js",
-    "static/css/main.d4dc5a52.chunk.css",
-    "static/js/main.1086a1fe.chunk.js"
+    "static/css/main.2d05f54c.chunk.css",
+    "static/js/main.17c04a59.chunk.js"
   ]
 }
