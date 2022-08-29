@@ -1,44 +1,43 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import './ExpenseForm.css';
 
-const ExpenseForm = props => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: '',
-  //   enteredAmount: '',
-  //   enteredDate: '',
-  // });
-
+export default function ExpenseForm(props) {
+  // Util
+  const dateLocal = d =>
+    new Date(d.getTime() - d.getTimezoneOffset() * 60000)
+      .toISOString()
+      .split('T')[0]
+      .replace(/\//g, '-');
+  // State
+  const [enteredTitle, setEnteredTitle] = useState(''),
+    [enteredAmount, setEnteredAmount] = useState(''),
+    [enteredDate, setEnteredDate] = useState('');
+  // Events
   const titleChangeHandler = event => {
-    setEnteredTitle(event.target.value);
-  };
+      setEnteredTitle(event.target.value);
+    },
+    amountChangeHandler = event => {
+      setEnteredAmount(event.target.value);
+    },
+    dateChangeHandler = event => {
+      setEnteredDate(event.target.value);
+    },
+    submitHandler = event => {
+      event.preventDefault();
 
-  const amountChangeHandler = event => {
-    setEnteredAmount(event.target.value);
-  };
+      const expenseData = {
+        title: enteredTitle,
+        amount: enteredAmount,
+        date: new Date(enteredDate),
+      };
 
-  const dateChangeHandler = event => {
-    setEnteredDate(event.target.value);
-  };
-
-  const submitHandler = event => {
-    event.preventDefault();
-
-    const expenseData = {
-      title: enteredTitle,
-      amount: enteredAmount,
-      date: new Date(enteredDate),
+      props.onSaveExpenseData(expenseData);
+      setEnteredTitle('');
+      setEnteredAmount('');
+      setEnteredDate('');
     };
-
-    props.onSaveExpenseData(expenseData);
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
-  };
-
+  // Component
   return (
     <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
@@ -66,8 +65,8 @@ const ExpenseForm = props => {
           <label>Date</label>
           <input
             type='date'
-            min='2019-01-01'
-            max='2022-12-31'
+            min='2000-01-01'
+            max={dateLocal(new Date())}
             value={enteredDate}
             onChange={dateChangeHandler}
             required
@@ -79,6 +78,4 @@ const ExpenseForm = props => {
       </div>
     </form>
   );
-};
-
-export default ExpenseForm;
+}

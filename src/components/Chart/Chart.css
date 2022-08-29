@@ -20,14 +20,12 @@
   align-items: center;
   width: 100%;
 }
-
 .chart-el select {
   padding: 0.25rem;
   outline: none;
   border: none;
   font-family: 'Noto Sans JP', sans-serif;
 }
-
 .chart-el.header {
   flex-basis: auto;
 }
