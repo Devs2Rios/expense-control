@@ -40,6 +40,7 @@ export default function ExpenseForm(props) {
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
+        setAddExpenseUI(prevState => !prevState);
       }
     },
     newEventUIHandler = e => {
