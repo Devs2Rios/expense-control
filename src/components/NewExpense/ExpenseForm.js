@@ -33,7 +33,7 @@ export default function ExpenseForm(props) {
       if (enteredTitle && enteredAmount && enteredDate) {
         const expenseData = {
           title: enteredTitle,
-          amount: enteredAmount,
+          amount: +enteredAmount, // make it int
           date: new Date(enteredDate),
         };
         props.onSaveExpenseData(expenseData);

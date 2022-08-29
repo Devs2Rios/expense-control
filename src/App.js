@@ -54,12 +54,10 @@ export default function App() {
       setTotal(updateTotal(itemsByYear([...expenses], year)));
     },
     addExpenseHandler = expense => {
-      expense.id = `e${expenses.length + 1}`;
-      expense.amount = Number(expense.amount);
-      expenses.push(expense);
       // Updated outside because other states depending on it are updated here as well
       // If it would be alone it might use:
       // setExpenses(prevExpenses => [expense, ...prevExpenses]);
+      expenses.push(expense);
       setExpenses(expenses);
       setItems(itemsByYear([...expenses], yearFilter));
       setYears(getYears(expenses));
@@ -68,7 +66,7 @@ export default function App() {
   // Component
   return (
     <div className='App'>
-      <NewExpense onAddExpense={addExpenseHandler} />
+      <NewExpense expenses={expenses} onAddExpense={addExpenseHandler} />
       <Expenses
         items={items}
         years={years}
